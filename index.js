@@ -70,6 +70,11 @@ function getPopulationResults(query) {
     .then(populationResponseJson => {
       displayPopulationResults(populationResponseJson)
       getPovertyResults(query);
+    })
+    .catch(error => {
+      $('#results').toggleClass('hidden')
+      alert('Something went wrong with getting your information. Try again in a moment.')
+      enableButton();
     });
 }
 
@@ -89,8 +94,13 @@ function getPovertyResults(query) {
     })
     .then(povertyResponseJson => {
       displayPovertyResults(povertyResponseJson)
+      enableButton();
+    })
+    .catch(error => {
+      $('#results').toggleClass('hidden')
+      alert('Something went wrong with getting your information. Try again in a moment.')
+      enableButton();
     });
-  enableButton();
 }
 
 function getC19Results(query) {
@@ -110,6 +120,11 @@ function getC19Results(query) {
     .then(covidResponseJson => {
       displayC19Results(covidResponseJson)
             getPopulationResults(query);
+    })
+.catch(error => {
+      $('#results').toggleClass('hidden')
+      alert('Something went wrong with getting your information. Try again in a moment.')
+      enableButton();
     });
 }
 

@@ -26,6 +26,8 @@ button:hover {
 .flexContainer {
   display: flex;
   flex-direction: row;
+  text-align: center;
+  justify-content: center;
 }
 
 .stateContainer {
@@ -40,7 +42,6 @@ button:hover {
 
 h2 {
   text-align: center;
-  padding-top: 20px;
 }
 
 .submitButton {
